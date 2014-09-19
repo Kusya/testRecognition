@@ -77,3 +77,14 @@ C:\nika\11\testRecognition\test2nika\bin\System.Web.Http.WebHost.xml
 C:\nika\11\testRecognition\test2nika\bin\ru\System.Net.Http.Formatting.resources.dll
 C:\nika\11\testRecognition\test2nika\bin\ru\System.Web.Http.resources.dll
 C:\nika\11\testRecognition\test2nika\bin\ru\System.Web.Http.WebHost.resources.dll
+D:\nika_yankovskaya\test2nika\test2nika\bin\Newtonsoft.Json.dll
+D:\nika_yankovskaya\test2nika\test2nika\bin\System.Net.Http.Formatting.dll
+D:\nika_yankovskaya\test2nika\test2nika\bin\System.Web.Http.dll
+D:\nika_yankovskaya\test2nika\test2nika\bin\System.Web.Http.WebHost.dll
+D:\nika_yankovskaya\test2nika\test2nika\bin\Newtonsoft.Json.xml
+D:\nika_yankovskaya\test2nika\test2nika\bin\System.Net.Http.Formatting.xml
+D:\nika_yankovskaya\test2nika\test2nika\bin\System.Web.Http.xml
+D:\nika_yankovskaya\test2nika\test2nika\bin\System.Web.Http.WebHost.xml
+D:\nika_yankovskaya\test2nika\test2nika\bin\ru\System.Net.Http.Formatting.resources.dll
+D:\nika_yankovskaya\test2nika\test2nika\bin\ru\System.Web.Http.resources.dll
+D:\nika_yankovskaya\test2nika\test2nika\bin\ru\System.Web.Http.WebHost.resources.dll

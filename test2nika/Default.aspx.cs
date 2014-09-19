@@ -15,7 +15,7 @@ namespace test2nika
         }
         protected void ButtonClk(object sender, EventArgs e)
         {
-            message1.Text = "кнопощка нажата!"+ inputText.Value;
+            //message1.Text = "кнопощка нажата!"+ inputText.Value;
         }
     }
 }
