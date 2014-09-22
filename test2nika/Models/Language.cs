@@ -7,6 +7,8 @@ namespace test2nika.Models
 {
     public class Language
     {
+        //enum LanguageList:int { Russian, Belarusian, Ukrainian}
+
         string Name { get; set; }
         Features feature;
     }
