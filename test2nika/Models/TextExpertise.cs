@@ -7,6 +7,8 @@ namespace test2nika.Models
 {
     public class TextExpertise
     {
+        
+        
         private string TextValue;
         private Language primaryLanguage;
         public Language PrimaryLanguage
@@ -14,18 +16,10 @@ namespace test2nika.Models
             get {return primaryLanguage;}
             set
             {
-                Features f = new Features();
-                bool belarusian = f.checkBel(TextValue);
-                bool russian = f.checkRus(TextValue);
-                bool ukrainian = f.checkUkr(TextValue);
+                
                 primaryLanguage = value; }
         }
-        private char majorSound;
-        public char MajorSound
-        {
-            get { return majorSound; }
-            set { majorSound = value; }
-        }
+        
         
         private char majorLetter;
         public char MajorLetter
@@ -35,10 +29,24 @@ namespace test2nika.Models
         }
 
         private List<char> specificLetter;
-        public List<char> SpecificLetter
+        //public List<char> SpecificLetter
+        //{
+        //    get { return specificLetter; }
+        //    set { specificLetter.Add(value); }
+        //}
+
+        private string LanguageVerification(string text)
         {
-            get { return specificLetter; }
-            set { specificLetter.Add(value); }
+            text=text.ToLower();
+            int[] languagePriority = new int[3];
+            Features f = new Features();
+            int vowal= f.VowalsContant(text);
+            if (vowal*10 > 9 || vowal*10 < 1) return "такого слова несуществует в словаре. хотите добавить?";
+            languagePriority[0] = f.CheckBelSymbols(text);
+            languagePriority[1] = f.CheckRusSymbols(text);
+            languagePriority[2] = f.CheckUkrSymbols(text);
+            int[] temp = f.CheckLenguageFeatures(text,languagePriority);
+            return null;
         }
     }
 }
