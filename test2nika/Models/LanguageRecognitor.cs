@@ -7,7 +7,7 @@ namespace test2nika.Models
 {
     public class LanguageRecognitor
     {
-        List<Language> toCheck;
+        List<ILanguage> toCheck;
         public void recognise(string word)
         {
             

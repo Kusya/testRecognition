@@ -10,8 +10,8 @@ namespace test2nika.Models
         
         
         private string TextValue;
-        private Language primaryLanguage;
-        public Language PrimaryLanguage
+        private ILanguage primaryLanguage;
+        public ILanguage PrimaryLanguage
         {
             get {return primaryLanguage;}
             set
@@ -34,18 +34,25 @@ namespace test2nika.Models
         //    get { return specificLetter; }
         //    set { specificLetter.Add(value); }
         //}
-
+        public int VowalsContant(string text)
+        {
+            int vowalPersent = 0;
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (text.Contains(text[i])) vowalPersent++;
+            }
+            vowalPersent = text.Length / vowalPersent;
+            return vowalPersent;
+        }
+        public abstract int FindFeatures(string text);
         private string LanguageVerification(string text)
         {
             text=text.ToLower();
             int[] languagePriority = new int[3];
-            Features f = new Features();
-            int vowal= f.VowalsContant(text);
+            int vowal= VowalsContant(text);
             if (vowal*10 > 9 || vowal*10 < 1) return "такого слова несуществует в словаре. хотите добавить?";
-            languagePriority[0] = f.CheckBelSymbols(text);
-            languagePriority[1] = f.CheckRusSymbols(text);
-            languagePriority[2] = f.CheckUkrSymbols(text);
-            int[] temp = f.CheckLenguageFeatures(text,languagePriority);
+            
+            //int[] temp = f.CheckLenguageFeatures(text,languagePriority);
             return null;
         }
     }
