@@ -6,38 +6,43 @@ using System.Threading.Tasks;
 
 namespace Services.LanguageRecognition
 {
-    class ILanguage
+    public class ILanguage
     {
+        public string name;
+        public int points;
         private char[] specificSymbols;
         private char[] unusedSymbols;
         private char[] vowels = new char[] { 'а', 'о', 'у', 'ы', 'э', 'я', 'ё', 'ю', 'и', 'е', 'і', 'ї', 'є' };
-        public int CheckSymbols(string checkingText)
+        public void CheckSymbols(string checkingText)
         {
-            int temp = 0;
+            
             for (int i = 0; i < specificSymbols.Length; i++)
             {
-                if (checkingText.Contains(specificSymbols[i])) temp++;
+                if (checkingText.Contains(specificSymbols[i])) points++;
             }
             for (int i = 0; i < unusedSymbols.Length; i++)
             {
-                if (checkingText.Contains(unusedSymbols[i])) temp--;
+                if (checkingText.Contains(unusedSymbols[i])) points--;
             }
-            return temp*10;
+             points *= 10;
         }
-        public virtual int FindFeatures(string text, int temp)
+        public virtual void FindFeatures(string text)
         {
-            return -1;
+            
         }
 
-        public int VowalsContant(string text)
+        public bool IsWord(string text)
         {
             int vowalPersent = 0;
             for (int i = 0; i < text.Length; i++)
             {
-                if (vowels.Contains(text[i])) vowalPersent++;
+                if (vowels.Contains(text[i]))
+                {
+                    vowalPersent++;
+                }
             }
-            vowalPersent = text.Length / vowalPersent;
-            return vowalPersent;
+            float percent = text.Length / (float)vowalPersent;
+            return !(percent > 0.9 || percent < 0.1);
         }
     }
 }

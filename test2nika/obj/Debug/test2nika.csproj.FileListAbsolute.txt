@@ -90,3 +90,5 @@ D:\nika_yankovskaya\test2nika\test2nika\bin\ru\System.Web.Http.resources.dll
 D:\nika_yankovskaya\test2nika\test2nika\bin\ru\System.Web.Http.WebHost.resources.dll
 D:\nika_yankovskaya\test2nika\test2nika\bin\Services.LanguageRecognition.dll
 D:\nika_yankovskaya\test2nika\test2nika\bin\Services.LanguageRecognition.pdb
+C:\nika\11\testRecognition\test2nika\bin\Services.LanguageRecognition.dll
+C:\nika\11\testRecognition\test2nika\bin\Services.LanguageRecognition.pdb

@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test2nika", "test2nika\test2nika.csproj", "{45CFDC08-D5E3-47DB-B49C-F6BEE0F721B2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{94916967-9B10-4C85-8617-52EE01E0EF18} = {94916967-9B10-4C85-8617-52EE01E0EF18}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{25BCC4B6-973C-4185-A0E8-D6F359971D8C}"
 	ProjectSection(SolutionItems) = preProject

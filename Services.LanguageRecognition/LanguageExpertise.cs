@@ -6,51 +6,55 @@ using System.Threading.Tasks;
 
 namespace Services.LanguageRecognition
 {
-    class LanguageExpertise
+    public class LanguageExpertise
     {
-        public int[] Main(string text)
+        public string DetectLanguage(string text)
         {
             text = text.ToLower();
-            int[] languagePriority = new int[3];
+            var languagePriority = new int[3];
             ILanguage l = null;
-            int vowal = l.VowalsContant(text);
-            if (vowal * 10 > 9 || vowal * 10 < 1) return null;
-            System.Collections.Generic.List<ILanguage> languages = new System.Collections.Generic.List<ILanguage>();
-            languages.Add(new Belarusian());
-            languages.Add(new Russian());
-            languages.Add(new Ukrainian());
+            bool word = l.IsWord(text);
+            if (!word) return null;
+            var languages = new List<ILanguage>
+            {
+                new Belarusian(),
+                new Russian(),
+                new Ukrainian()
+            };
             int i = 0;
             foreach (ILanguage s in languages)
             {
-                languagePriority[i]= s.CheckSymbols(text);
-                i++;
+                s.CheckSymbols(text);
             }
             if (languagePriority.Contains(10) || languagePriority.Contains(20))
             {
-                int count = languagePriority.Sum();
-                for (int j = 0; j < 3; j++)
-                {
-                    languagePriority[j] = (languagePriority[j] / count) * 100;
-                }
-                return languagePriority;
+                return "язык";
             }
             else
             {
                 foreach (ILanguage s in languages)
                 {
-                    languagePriority[i] = s.FindFeatures(text, languagePriority[i]);
-                    i++;
+                    s.FindFeatures(text);
+                    
                 }
                 //if(languagePriority.Contains(0)) то поиск по словарю
                 int count = languagePriority.Sum();
-                for (int j = 0; j < 3; j++)
-                {
-                    languagePriority[j] = (languagePriority[j] / count) * 100;
-                }
-                return languagePriority;
+                //for (int j = 0; j < 3; j++)
+                //{
+                //    languagePriority[j] = (languagePriority[j] / count) * 100;
+                //}
+                //return languagePriority;
             }
-            //int[] temp = f.CheckLenguageFeatures(text,languagePriority);
-            return null;
+            int max = 0,j=0;
+            for (i = 0; i < 3; i++)
+            {
+                if (languagePriority[i] > max)
+                {
+                    max = languagePriority[i];
+                    j = i;
+                }
+            }
+            return "языки";
         }
         
 

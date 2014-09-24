@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Web.Http;
 using System.Web.Query.Dynamic;
 using DotNetOpenAuth.OpenId.Extensions.AttributeExchange;
+using Services.LanguageRecognition;
 using test2nika.Models;
 
 namespace test2nika.Controllers
@@ -33,6 +34,10 @@ namespace test2nika.Controllers
 
         public IEnumerable<Product> GetAllProducts()
         {
+            LanguageExpertise first = new LanguageExpertise();
+            int[] languages = first.DetectLanguage("привет как дела что нового");
+            int max = 0,j=0;
+            
             return products;
         }
 

@@ -2,24 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Services.LanguageRecognition;
 
 
 namespace test2nika.Models
 {
     public class TextExpertise
     {
-        
-        
         private string TextValue;
-        //private ILanguage primaryLanguage;
-        //public ILanguage PrimaryLanguage
-        //{
-        //    get {return primaryLanguage;}
-        //    set
-        //    {
-                
-        //        primaryLanguage = value; }
-        //}
+        private ILanguage primaryLanguage;
+        public ILanguage PrimaryLanguage
+        {
+            get { return primaryLanguage; }
+            set
+            {
+
+                primaryLanguage = value;
+            }
+        }
         
         
         private char majorLetter;

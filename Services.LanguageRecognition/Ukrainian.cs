@@ -8,25 +8,31 @@ namespace Services.LanguageRecognition
 {
     class Ukrainian:ILanguage
     {
+        public string name = "Украинский язык";
+        public int points ;
         private char[] specificSymbols = new char[] { 'є', 'ї' };
         private char[] unusedSymbols = new char[] { 'э', 'ы' };
 
-        public override int FindFeatures(string text, int temp)
+        public Ukrainian()
         {
-            //int temp = 0;
+            points = 0;
+        }
+        public override void FindFeatures(string text)
+        {
+            //int points = 0;
             for (int i = 0; i < text.Length; i++)
             {
-                if (text[i] == 'і' || text[i] == 'о') temp++;// преимущественно украинские буквы
+                if (text[i] == 'і' || text[i] == 'о') points++;// преимущественно украинские буквы
                 if (i < text.Length - 2)
                 {
                     //украинские признаки
                     if (text[i] == 'ц')
-                        if (text[i + 1] == 'ь' && text[i + 2] == ' ') temp++;//мягкость ць
-                    if ((text[i] == 'о' || text[i] == 'е') && text[i + 1] == 'ю' && text[i + 2] == ' ') temp++;//окончания ою ею
-                    if (text[i] == 'т' && text[i + 1] == 'и' && text[i + 2] == ' ') temp++;//окончания ти инфинитивов
+                        if (text[i + 1] == 'ь' && text[i + 2] == ' ') points++;//мягкость ць
+                    if ((text[i] == 'о' || text[i] == 'е') && text[i + 1] == 'ю' && text[i + 2] == ' ') points++;//окончания ою ею
+                    if (text[i] == 'т' && text[i + 1] == 'и' && text[i + 2] == ' ') points++;//окончания ти инфинитивов
                 }
             }
-            return temp;
+            //return points;
         }
     }
 }

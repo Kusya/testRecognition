@@ -13,7 +13,7 @@ namespace Services.LanguageRecognition
             string text = "dfadf";
             Russian r = new Russian();
             int i = r.CheckSymbols(text);
-            i += r.FindFeatures(text);            
+            //i += r.FindFeatures(text,);            
         }
     }
 }
