@@ -13,9 +13,9 @@ namespace Services.LanguageRecognition
         private char[] mostBelLettere = new char[] { 'а', 'я', 'ц', 'ы' };
         private char[] hardVowels = new char[] { 'а', 'о', 'у', 'ы', 'э' };
         private char[] doubleLetters = new char[] { 'з', 'с', 'ц', 'ш', 'ж', 'ч', 'л' };
-        public int FindFeatures(string text)
+        public override int FindFeatures(string text,int temp)
         {
-            int temp = 0;
+            //int temp = 0;
             if (text.Contains("дз") || text.Contains("дж")) temp += 10;
             for (int i = 0; i < text.Length; i++)
             {

@@ -12,9 +12,9 @@ namespace Services.LanguageRecognition
         private char[] unusedSymbols = new char[] { '\'', 'і' };
         private char[] softVowels = new char[] { 'я', 'ё', 'ю', 'и', 'е' };
         private char[] doubleLetters = new char[] { 'з', 'с', 'ц', 'ш', 'ж', 'ч', 'л' };
-        public int FindFeatures(string text)
+        public override int FindFeatures(string text, int temp)
         {
-            int temp = 0;
+            //int temp = 0;
             for (int i = 0; i < text.Length; i++)
             {
                 if (text[i] == 'л' || text[i] == 'е' || text[i] == 'ф') temp++;//преимущественно русские буквы

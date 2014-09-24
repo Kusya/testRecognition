@@ -88,3 +88,5 @@ D:\nika_yankovskaya\test2nika\test2nika\bin\System.Web.Http.WebHost.xml
 D:\nika_yankovskaya\test2nika\test2nika\bin\ru\System.Net.Http.Formatting.resources.dll
 D:\nika_yankovskaya\test2nika\test2nika\bin\ru\System.Web.Http.resources.dll
 D:\nika_yankovskaya\test2nika\test2nika\bin\ru\System.Web.Http.WebHost.resources.dll
+D:\nika_yankovskaya\test2nika\test2nika\bin\Services.LanguageRecognition.dll
+D:\nika_yankovskaya\test2nika\test2nika\bin\Services.LanguageRecognition.pdb

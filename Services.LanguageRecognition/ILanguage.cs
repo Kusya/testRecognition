@@ -22,9 +22,23 @@ namespace Services.LanguageRecognition
             {
                 if (checkingText.Contains(unusedSymbols[i])) temp--;
             }
-            return temp;
+            return temp*10;
         }
-        
+        public virtual int FindFeatures(string text, int temp)
+        {
+            return -1;
+        }
+
+        public int VowalsContant(string text)
+        {
+            int vowalPersent = 0;
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (vowels.Contains(text[i])) vowalPersent++;
+            }
+            vowalPersent = text.Length / vowalPersent;
+            return vowalPersent;
+        }
     }
 }
 

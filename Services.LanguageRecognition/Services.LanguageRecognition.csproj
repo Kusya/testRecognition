@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Belarusian.cs" />
     <Compile Include="ILanguage.cs" />
+    <Compile Include="LanguageExpertise.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Russian.cs" />
     <Compile Include="test.cs" />

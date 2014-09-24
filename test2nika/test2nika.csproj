@@ -48,6 +48,9 @@
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Services.LanguageRecognition">
+      <HintPath>..\Services.LanguageRecognition\bin\Debug\Services.LanguageRecognition.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -341,7 +344,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\LanguageRecognitor.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\TextExpertise.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

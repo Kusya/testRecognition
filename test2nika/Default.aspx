@@ -5,7 +5,7 @@
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
     <script src="Scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
     <script type="text/javascript">
-
+        $(document).ready(
         function getTestDate() {
             $.getJSON("api/test",
                 function (data) {
@@ -14,14 +14,13 @@
                     // Loop through the list of products.
                     $.each(data, function (key, val) {
                         // Add a table row for the product.
-                        var row = "<td>" + val.Name + "</td><td>" + val.Price + "</td>";
+                        var row = $("<tr><td>" + val.Name + "</td><td>" + val.Price + "</td></tr>");
 
-                        $('<tr/>', { text: row })  // Append the name.
+                         row  // Append the name.
                             .appendTo($('#forTestDate'));
                     });
                 });
-        }
-        $(document).ready(getTestDate);
+        });
 </script>
 </asp:Content>
 
