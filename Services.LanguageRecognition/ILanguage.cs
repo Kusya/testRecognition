@@ -8,23 +8,32 @@ namespace Services.LanguageRecognition
 {
     public class ILanguage
     {
-        public string name;
-        public int points;
-        private char[] specificSymbols;
-        private char[] unusedSymbols;
-        private char[] vowels = new char[] { 'а', 'о', 'у', 'ы', 'э', 'я', 'ё', 'ю', 'и', 'е', 'і', 'ї', 'є' };
+        public string Name { get; set; }
+        public int Points { get; set; }
+        public char[] SpecificSymbols { get; set; }
+        public char[] UnusedSymbols { get; set; }
+
+        public char[] Vowels = new char[] { 'а', 'о', 'у', 'ы', 'э', 'я', 'ё', 'ю', 'и', 'е', 'і', 'ї', 'є' };
+
+
         public void CheckSymbols(string checkingText)
         {
             
-            for (int i = 0; i < specificSymbols.Length; i++)
+            foreach (char symbol in SpecificSymbols)
             {
-                if (checkingText.Contains(specificSymbols[i])) points++;
+                if (checkingText.Contains(symbol))
+                {
+                    Points++;
+                }
             }
-            for (int i = 0; i < unusedSymbols.Length; i++)
+            foreach (char symbol in UnusedSymbols)
             {
-                if (checkingText.Contains(unusedSymbols[i])) points--;
+                if (checkingText.Contains(symbol))
+                {
+                    Points--;
+                }
             }
-             points *= 10;
+            Points *= 10;
         }
         public virtual void FindFeatures(string text)
         {
@@ -33,15 +42,8 @@ namespace Services.LanguageRecognition
 
         public bool IsWord(string text)
         {
-            int vowalPersent = 0;
-            for (int i = 0; i < text.Length; i++)
-            {
-                if (vowels.Contains(text[i]))
-                {
-                    vowalPersent++;
-                }
-            }
-            float percent = text.Length / (float)vowalPersent;
+            int vowalPersent = text.Count(t => Vowels.Contains(t));
+            float percent = (float)vowalPersent /text.Length  ;
             return !(percent > 0.9 || percent < 0.1);
         }
     }

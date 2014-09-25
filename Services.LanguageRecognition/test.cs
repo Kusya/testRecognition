@@ -11,8 +11,8 @@ namespace Services.LanguageRecognition
         private void Main()
         {
             string text = "dfadf";
-            Russian r = new Russian();
-            int i = r.CheckSymbols(text);
+            //Russian r = new Russian();
+            //int i = r.CheckSymbols(text);
             //i += r.FindFeatures(text,);            
         }
     }

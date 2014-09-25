@@ -12,7 +12,7 @@ namespace Services.LanguageRecognition
         {
             text = text.ToLower();
             var languagePriority = new int[3];
-            ILanguage l = null;
+            var l = new ILanguage();
             bool word = l.IsWord(text);
             if (!word) return null;
             var languages = new List<ILanguage>
@@ -21,42 +21,35 @@ namespace Services.LanguageRecognition
                 new Russian(),
                 new Ukrainian()
             };
-            int i = 0;
+            int max = -20;
+            string lang = null;
             foreach (ILanguage s in languages)
             {
                 s.CheckSymbols(text);
+                if (s.Points > max)
+                {
+                    max = s.Points;
+                    lang = s.Name;
+                }
             }
-            if (languagePriority.Contains(10) || languagePriority.Contains(20))
+            if (max>10)
             {
-                return "язык";
+                return lang;
             }
             else
             {
+                //if(languagePriority.Contains(0)) то поиск по словарю
                 foreach (ILanguage s in languages)
                 {
                     s.FindFeatures(text);
-                    
-                }
-                //if(languagePriority.Contains(0)) то поиск по словарю
-                int count = languagePriority.Sum();
-                //for (int j = 0; j < 3; j++)
-                //{
-                //    languagePriority[j] = (languagePriority[j] / count) * 100;
-                //}
-                //return languagePriority;
-            }
-            int max = 0,j=0;
-            for (i = 0; i < 3; i++)
-            {
-                if (languagePriority[i] > max)
-                {
-                    max = languagePriority[i];
-                    j = i;
+                    if (s.Points > max)
+                    {
+                        max = s.Points;
+                        lang = s.Name;
+                    }
                 }
             }
-            return "языки";
+            return lang;
         }
-        
-
     }
 }

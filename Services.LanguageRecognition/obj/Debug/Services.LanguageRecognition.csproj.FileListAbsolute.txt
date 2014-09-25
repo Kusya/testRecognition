@@ -3,3 +3,8 @@ D:\nika_yankovskaya\test2nika\Services.LanguageRecognition\bin\Debug\Services.La
 D:\nika_yankovskaya\test2nika\Services.LanguageRecognition\bin\Debug\Services.LanguageRecognition.pdb
 D:\nika_yankovskaya\test2nika\Services.LanguageRecognition\obj\Debug\Services.LanguageRecognition.dll
 D:\nika_yankovskaya\test2nika\Services.LanguageRecognition\obj\Debug\Services.LanguageRecognition.pdb
+C:\nika\11\testRecognition\Services.LanguageRecognition\obj\Debug\Services.LanguageRecognition.dll
+C:\nika\11\testRecognition\Services.LanguageRecognition\bin\Debug\Services.LanguageRecognition.dll
+C:\nika\11\testRecognition\Services.LanguageRecognition\bin\Debug\Services.LanguageRecognition.pdb
+C:\nika\11\testRecognition\Services.LanguageRecognition\obj\Debug\Services.LanguageRecognition.pdb
+C:\nika\11\testRecognition\Services.LanguageRecognition\obj\Debug\Services.LanguageRecognition.csprojResolveAssemblyReference.cache

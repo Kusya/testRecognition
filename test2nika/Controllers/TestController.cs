@@ -34,21 +34,19 @@ namespace test2nika.Controllers
 
         public IEnumerable<Product> GetAllProducts()
         {
-            LanguageExpertise first = new LanguageExpertise();
-            int[] languages = first.DetectLanguage("привет как дела что нового");
-            int max = 0,j=0;
-            
             return products;
         }
 
-        public Product GetProductById(int id)
+        public string GetProductById(int id)
         {
-            var product = products.FirstOrDefault((p) => p.Id == id);
-            if (product == null)
-            {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
-            }
-            return product;
+            //var product = products.FirstOrDefault((p) => p.Id == id);
+            //if (product == null)
+            //{
+            //    throw new HttpResponseException(HttpStatusCode.NotFound);
+            //}
+            LanguageExpertise first = new LanguageExpertise();
+            string languages = first.DetectLanguage("привет как дела что нового");
+            return languages;
         }
 
         public IEnumerable<Product> GetProductsByCategory(string category)
