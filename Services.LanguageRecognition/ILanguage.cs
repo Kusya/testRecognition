@@ -12,9 +12,7 @@ namespace Services.LanguageRecognition
         public int Points { get; set; }
         public char[] SpecificSymbols { get; set; }
         public char[] UnusedSymbols { get; set; }
-
         public char[] Vowels = new char[] { 'а', 'о', 'у', 'ы', 'э', 'я', 'ё', 'ю', 'и', 'е', 'і', 'ї', 'є' };
-
 
         public void CheckSymbols(string checkingText)
         {

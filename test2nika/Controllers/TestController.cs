@@ -37,16 +37,14 @@ namespace test2nika.Controllers
             return products;
         }
 
-        public string GetProductById(int id)
+        public Product GetProductById(int id)
         {
-            //var product = products.FirstOrDefault((p) => p.Id == id);
-            //if (product == null)
-            //{
-            //    throw new HttpResponseException(HttpStatusCode.NotFound);
-            //}
-            LanguageExpertise first = new LanguageExpertise();
-            string languages = first.DetectLanguage("привет как дела что нового");
-            return languages;
+            var product = products.FirstOrDefault((p) => p.Id == id);
+            if (product == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+            return product;
         }
 
         public IEnumerable<Product> GetProductsByCategory(string category)
