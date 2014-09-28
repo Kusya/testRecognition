@@ -1,0 +1,8 @@
+C:\nika\11\testRecognition\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\nika\11\testRecognition\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+C:\nika\11\testRecognition\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\nika\11\testRecognition\DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\nika\11\testRecognition\DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\nika\11\testRecognition\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\nika\11\testRecognition\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\nika\11\testRecognition\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

@@ -7,6 +7,8 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.Http;
 using test2nika;
+using System.Data.Entity;
+using DataAccessLayer;
 
 namespace test2nika
 {
@@ -18,6 +20,8 @@ namespace test2nika
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterOpenAuth();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            // Initialize the product database.
+            Database.SetInitializer(new DictionaryInitializer());
         }
 
         void Application_End(object sender, EventArgs e)

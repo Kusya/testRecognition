@@ -1,0 +1,5 @@
+C:\nika\11\testRecognition\Services.LanguageRecognition\bin\Release\Services.LanguageRecognition.dll
+C:\nika\11\testRecognition\Services.LanguageRecognition\bin\Release\Services.LanguageRecognition.pdb
+C:\nika\11\testRecognition\Services.LanguageRecognition\obj\Release\Services.LanguageRecognition.csprojResolveAssemblyReference.cache
+C:\nika\11\testRecognition\Services.LanguageRecognition\obj\Release\Services.LanguageRecognition.dll
+C:\nika\11\testRecognition\Services.LanguageRecognition\obj\Release\Services.LanguageRecognition.pdb

@@ -5,6 +5,7 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test2nika", "test2nika\test2nika.csproj", "{45CFDC08-D5E3-47DB-B49C-F6BEE0F721B2}"
 	ProjectSection(ProjectDependencies) = postProject
+		{4186B661-4B5F-408B-ADA0-E0DA49D9C0E0} = {4186B661-4B5F-408B-ADA0-E0DA49D9C0E0}
 		{94916967-9B10-4C85-8617-52EE01E0EF18} = {94916967-9B10-4C85-8617-52EE01E0EF18}
 	EndProjectSection
 EndProject
@@ -16,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{25BCC4
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.LanguageRecognition", "Services.LanguageRecognition\Services.LanguageRecognition.csproj", "{94916967-9B10-4C85-8617-52EE01E0EF18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{4186B661-4B5F-408B-ADA0-E0DA49D9C0E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +34,10 @@ Global
 		{94916967-9B10-4C85-8617-52EE01E0EF18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94916967-9B10-4C85-8617-52EE01E0EF18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94916967-9B10-4C85-8617-52EE01E0EF18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4186B661-4B5F-408B-ADA0-E0DA49D9C0E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4186B661-4B5F-408B-ADA0-E0DA49D9C0E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4186B661-4B5F-408B-ADA0-E0DA49D9C0E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4186B661-4B5F-408B-ADA0-E0DA49D9C0E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -44,7 +44,6 @@
     <Compile Include="LanguageExpertise.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Russian.cs" />
-    <Compile Include="test.cs" />
     <Compile Include="Ukrainian.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
