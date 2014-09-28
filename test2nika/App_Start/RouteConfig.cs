@@ -14,9 +14,9 @@ namespace test2nika
             routes.EnableFriendlyUrls();
 
             RouteTable.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new {id = System.Web.Http.RouteParameter.Optional});
+                "DefaultApi",
+                "{controller}/{action}",
+                new[] { "test2nika.Controllers" });
         }
     }
 }

@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Services.LanguageRecognition
 {
-    class Russian: ILanguage
+    class Russian: Language
     {
         private  char[] softVowels = { 'я', 'ё', 'ю', 'и', 'е' };
         private  char[] doubleLetters = { 'з', 'с', 'ц', 'ш', 'ж', 'ч', 'л' };
 
         public Russian()
         {
-            Points = 0;
+            Points = 20;
             Name = "Русский язык";
             SpecificSymbols = new []{ 'ъ' };
             UnusedSymbols = new [] { '\'', 'і' };

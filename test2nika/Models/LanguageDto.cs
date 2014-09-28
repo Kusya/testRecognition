@@ -5,7 +5,7 @@ using System.Web;
 
 namespace test2nika.Models
 {
-    public class Language
+    public class LanguageDto
     {
         public string Name { get; set; }
         public int Percentage { get; set; }

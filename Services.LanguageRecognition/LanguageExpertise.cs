@@ -8,48 +8,43 @@ namespace Services.LanguageRecognition
 {
     public class LanguageExpertise
     {
-        public string DetectLanguage(string text)
+
+        private readonly char[] vowels = { 'а', 'о', 'у', 'ы', 'э', 'я', 'ё', 'ю', 'и', 'е', 'і', 'ї', 'є' };
+
+        private readonly List<Language> languages = new List<Language> { new Belarusian(), new Russian(), new Ukrainian() };
+
+        private int summPoints;
+        private int Maximum { get; set; }
+
+        public IEnumerable<Language> DetectLanguage(string text)
         {
             text = text.ToLower();
             var languagePriority = new int[3];
-            var l = new ILanguage();
-            bool word = l.IsWord(text);
-            if (!word) return null;
-            var languages = new List<ILanguage>
+
+            if (!IsWord(text)) return null;
+            CalculatePoints(text);
+            foreach (Language language in languages)
             {
-                new Belarusian(),
-                new Russian(),
-                new Ukrainian()
-            };
-            int max = -20;
-            string lang = null;
-            foreach (ILanguage s in languages)
+                language.Percent = (language.Points*100) / summPoints;
+            }
+            return languages;
+        }
+
+        private void CalculatePoints(string text)
+        {            
+            foreach (Language s in languages)
             {
                 s.CheckSymbols(text);
-                if (s.Points > max)
-                {
-                    max = s.Points;
-                    lang = s.Name;
-                }
+                s.FindFeatures(text);
+                summPoints += s.Points;
             }
-            if (max>10)
-            {
-                return lang;
-            }
-            else
-            {
-                //if(languagePriority.Contains(0)) то поиск по словарю
-                foreach (ILanguage s in languages)
-                {
-                    s.FindFeatures(text);
-                    if (s.Points > max)
-                    {
-                        max = s.Points;
-                        lang = s.Name;
-                    }
-                }
-            }
-            return lang;
+        }    
+        private bool IsWord(string text)
+        {
+            int vowalPersent = text.Count(t => vowels.Contains(t));
+            float percent = (float)vowalPersent / text.Length;
+            return !(percent > 0.9 || percent < 0.1);
         }
     }
+    
 }

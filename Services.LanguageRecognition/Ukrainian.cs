@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Services.LanguageRecognition
 {
-    class Ukrainian:ILanguage
+    class Ukrainian:Language
     {
         public Ukrainian()
         {
-            Points = 0;
+            Points = 20;
             Name = "Украинский язык";
             SpecificSymbols = new char[] { 'є', 'ї' };
             UnusedSymbols = new char[] { 'э', 'ы' };

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Services.LanguageRecognition
 {
-    class Belarusian:ILanguage
+    class Belarusian:Language
     {
         private char[] mostBelLettere = new char[] { 'а', 'я', 'ц', 'ы' };
         private char[] hardVowels = new char[] { 'а', 'о', 'у', 'ы', 'э' };
@@ -14,7 +14,7 @@ namespace Services.LanguageRecognition
 
         public Belarusian()
         {
-            Points = 0;
+            Points = 20;
             Name = "Белорусский язык";
             SpecificSymbols = new [] { 'ў' };
             UnusedSymbols = new [] { 'щ', 'и' };

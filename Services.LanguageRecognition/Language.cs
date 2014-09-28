@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace Services.LanguageRecognition
 {
-    public class ILanguage
+    public class Language
     {
         public string Name { get; set; }
         public int Points { get; set; }
+        public int Percent { get; set; }
         public char[] SpecificSymbols { get; set; }
         public char[] UnusedSymbols { get; set; }
-        public char[] Vowels = new char[] { 'а', 'о', 'у', 'ы', 'э', 'я', 'ё', 'ю', 'и', 'е', 'і', 'ї', 'є' };
+
 
         public void CheckSymbols(string checkingText)
         {
@@ -21,29 +22,19 @@ namespace Services.LanguageRecognition
             {
                 if (checkingText.Contains(symbol))
                 {
-                    Points++;
+                    Points+=10;
                 }
             }
             foreach (char symbol in UnusedSymbols)
             {
                 if (checkingText.Contains(symbol))
                 {
-                    Points--;
+                    Points-=10;
                 }
             }
-            Points *= 10;
         }
         public virtual void FindFeatures(string text)
-        {
-            
-        }
-
-        public bool IsWord(string text)
-        {
-            int vowalPersent = text.Count(t => Vowels.Contains(t));
-            float percent = (float)vowalPersent /text.Length  ;
-            return !(percent > 0.9 || percent < 0.1);
-        }
+        {}
     }
 }
 
